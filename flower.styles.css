@@ -1,0 +1,39 @@
+body {
+    background-color: #f2e6ff; /* light lavender */
+    font-family: "Times New Roman", serif;
+    color: black;
+    padding: 5px;
+    line-height: 2; /* double spacing */
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #d0b6e8; /* light purple inside */
+    border: 3px solid #660099; /* darker purple border */
+    width: 250px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
