@@ -1,10 +1,7 @@
-
 .home .hero-image{
     background-image: url("/Assets/t1.jpg");
     height: 550px;
-
 }
-
 
 header {
   position: fixed;
@@ -27,7 +24,6 @@ header {
   align-items: center;
 }
 
-
 .logo {
   font-family: 'Oswald', sans-serif;
   font-size: 28px;
@@ -44,8 +40,7 @@ header {
   color: rgb(139, 162, 237);
 }
 
-
-.nav {
+.nav-list {
   display: flex;
   list-style: none;
   gap: 25px;
@@ -53,12 +48,12 @@ header {
   padding: 0;
 }
 
-.nav li {
+.nav-list li {
   margin: 0;
   padding: 0;
 }
 
-.nav li a {
+.nav-list li a {
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -71,15 +66,13 @@ header {
   transition: all 0.3s ease;
 }
 
-
-.nav li a:hover {
+.nav-list li a:hover {
   color: #1a4c7a;
   background-color: rgba(3, 28, 45, 0.1);
   transform: translateY(-2px);
 }
 
-
-.nav li a::after {
+.nav-list li a::after {
   content: '';
   position: absolute;
   bottom: 5px;
@@ -91,25 +84,22 @@ header {
   transform: translateX(-50%);
 }
 
-.nav li a:hover::after {
+.nav-list li a:hover::after {
   width: 70%;
 }
 
-
-.nav li a:focus {
+.nav-list li a:focus {
   outline: none;
   background-color: rgba(18, 50, 72, 0.2);
   box-shadow: 0 0 0 3px rgba(94, 123, 141, 0.5);
   border-radius: 25px;
 }
 
-
-.nav li a.active {
+.nav-list li a.active {
   color: rgb(52, 75, 150);
   background-color: rgba(52, 152, 219, 0.15);
   border-bottom: 2px solid rgb(26, 38, 75);
 }
-
 
 body {
   background-color: rgb(235, 240, 242);
@@ -138,7 +128,6 @@ body.index {
   text-align: center;
   padding-top: 200px;
 }
-
 
 .flex-demo {
   display: flex;
@@ -174,12 +163,150 @@ body.index {
   font-family: Georgia, serif;
 }
 
-
 .contact, .about, .telephone, .airplane, .internet, .satellite {
   margin: 0;
   line-height: 1.6;
 }
 
 .telephone, .airplane, .internet, .satellite {
-  padding: 20px;
+  padding: 30px;
+  margin: 20 px;
+}
+
+.contact-form-section {
+  background: white;        
+  border-radius: 20px;      
+  padding: 15px;          
+  font-weight: 600;       
+  color: rgb(26, 38, 75);  
+}
+
+fieldset {
+  border: 1px solid gray;   
+  border-radius: 5px;      
+}
+
+legend {
+  color: rgb(34, 68, 179);   
+  background: white;        
+}
+
+.radio-option {
+  display: flex;            
+  gap: 10px;                
+}
+
+/* ========== HAMBURGER MENU STYLES ========== */
+#nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(52, 75, 150);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* ========== MOBILE STYLES (≤768px) ========== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(218, 214, 214);
+    z-index: 98;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  }
+  
+  #nav-toggle:checked ~ .nav-links {
+    display: block;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .nav-list li {
+    border-bottom: 1px solid rgba(26, 38, 75, 0.2);
+  }
+  
+  .nav-list li a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 18px;
+  }
+  
+  /* X Animation */
+  #nav-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  #nav-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #nav-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
+
+/* ========== EXTRA NARROW STYLES (≤480px) - PART 2 ========== */
+@media (max-width: 480px) {
+  .hero {
+    font-size: 1.8rem;
+    padding-top: 120px;
+  }
+  
+  h1.green {
+    font-size: 1.4rem;
+  }
+  
+  .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .contact-form-section {
+    padding: 10px;
+  }
+  
+  fieldset {
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .header.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
